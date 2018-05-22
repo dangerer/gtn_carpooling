@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'GTN carpooling',
-	'description' => 'manage carpooling events',
+	'description' => 'manage carpooling events and more',
 	'category' => 'plugin',
 	'author' => 'Sergey Zavarzin',
 	'author_email' => 'szavarzin@gtn-solutions.com',
