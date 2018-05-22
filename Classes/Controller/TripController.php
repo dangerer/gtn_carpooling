@@ -74,8 +74,8 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                         \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, $dateFormat);
             }
         }
-        //$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-        $pageRenderer =\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+        //$pageRenderer =\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
         $pageRenderer->loadJquery();
         if (!$this->settings['doNotLoadDateTimePickerJavascript']) {
             $pageRenderer->addCssFile($this->settings['pathToDateTimePickerCss']);

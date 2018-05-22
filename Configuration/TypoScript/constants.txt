@@ -17,7 +17,7 @@ plugin.tx_gtncarpooling_trip {
 	}
 	persistence {
 		# cat=plugin.tx_gtncarpooling_trip//a; type=string; label=Default storage PID
-		storagePid = 31
+		storagePid = 427
 #		storagePid = 42
 	}
 }
