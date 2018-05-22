@@ -1,0 +1,50 @@
+	<f:form.validationResults for="{object}">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<f:then>
+				<div class="alert alert-danger">
+					<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">
+						<f:for each="{errors}" as="error">
+							<div>{error}</div>
+						</f:for>
+					</f:for>
+				</div>
+			</f:then>
+			<f:else>
+				<f:if condition="{myValidationResults}">
+					<div class="alert alert-danger">
+						<f:for each="{myValidationResults}" key="property" as="message">
+							<div>{message}</div>
+						</f:for>
+					</div>
+				</f:if>
+			</f:else>
+		</f:if>
+		</f:form.validationResults>
+
+<f:comment>
+<f:if condition="{object}">
+	<f:then>
+		<f:form.validationResults for="{object}">
+			<f:if condition="{validationResults.flattenedErrors}">
+				<div class="alert alert-danger">
+					<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">
+						<f:for each="{errors}" as="error">
+							<div>{error}</div>
+						</f:for>
+					</f:for>
+				</div>
+			</f:if>
+		</f:form.validationResults>
+	</f:then>
+	<f:else>
+			<f:if condition="{myValidationResults}">
+				<div class="alert alert-danger">
+					<f:for each="{myValidationResults}" key="property" as="message">
+						<div>{message}</div>
+					</f:for>
+				</div>
+			</f:if>
+	</f:else>
+</f:if>
+
+</f:comment>

@@ -1,0 +1,47 @@
+
+<p>
+    Sehr geehrte/r {trip.firstName} {trip.lastName}
+</p>
+
+<p>
+    Sie haben auf <a href="http://bifeb.at" >bifeb.at</a> eine Mitfahrgelegenheit eingegeben. <br />
+    Ihre Fahrt startet am <strong>{trip.tripDate -> f:format.date(format:'d.m.Y')}</strong> um <b>{trip.tripDate -> f:format.date(format:'H:i')}</b>
+    in <strong>{trip.cityStart}</strong><f:if condition="{trip.zipStart}"> ({trip.zipStart})</f:if> und führt nach <strong>{trip.cityDestination}</strong><f:if condition="{trip.zipDestination}"> ({trip.zipDestination})</f:if>.
+</p>
+<p>
+    Unter der E-Mail <strong>{trip.email}</strong> kann Kontakt zu ihnen aufgenommen werden.
+</p>
+<f:if condition="{sendEmailActivation}" >
+    <p>
+        Möchten sie diese Fahrt jetzt
+            <strong>
+                <f:link.action absolute="1" extensionName="gtncarpooling" pluginName="trip" action="publish" controller="Trip" arguments="{trip:trip}"  additionalParams="{publishHash:trip.publishHash}">
+                    freigeben
+                </f:link.action>
+            </strong>
+        , klicken sie bitte
+        <f:link.action absolute="1" extensionName="gtncarpooling" pluginName="trip" action="publish" controller="Trip" arguments="{trip:trip}"  additionalParams="{publishHash:trip.publishHash}">
+            hier</f:link.action>.
+    </p>
+</f:if>
+<p>
+    Möchten sie diese Fahrt wieder
+        <strong>
+            <f:link.action absolute="1" extensionName="gtncarpooling" pluginName="trip" action="delete" controller="Trip" arguments="{trip:trip}"  additionalParams="{deleteHash:trip.deleteHash}">
+                löschen
+            </f:link.action>
+        </strong>
+    , klicken sie bitte
+    <f:link.action absolute="1" extensionName="gtncarpooling" pluginName="trip" action="delete" controller="Trip" arguments="{trip:trip}"  additionalParams="{deleteHash:trip.deleteHash}">
+        hier</f:link.action>.<br />
+    Ihr Eintrag kann auch zu einem späteren Zeitpunkt, z.B. wenn sie keinen Platz mehr frei haben, durch klicken auf den <f:link.action absolute="1" extensionName="gtncarpooling" pluginName="trip" action="delete" controller="Trip" arguments="{trip:trip}"  additionalParams="{deleteHash:trip.deleteHash}"> löschen-Link </f:link.action> gelöscht werden.
+</br>
+
+<p>
+Das ist eine automatisch generierte E-Mail, bitte antworten sie nicht auf dieses E-Mail.
+</p>
+
+<p>
+Danke das sie bei der Mitfahrbörse teilnehmen,<br />
+schöne Grüße vom Bifeb!
+</p>

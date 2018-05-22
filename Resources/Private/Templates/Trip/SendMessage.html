@@ -1,0 +1,19 @@
+
+
+<f:layout name="Default" />
+
+
+<f:section name="main">
+
+  <f:render partial="Trip/Properties" arguments="{trip:trip}" />
+
+  <f:if condition="{settings.contactForm}">
+    <f:render partial="Trip/ContactForm" arguments="{trip:trip, passenger:passenger, myValidationResults:myValidationResults, successMessage:successMessage}" />
+  </f:if>
+
+  <div class="row">
+    <f:link.action action="list" pageUid="{settings.listPid}"><f:translate key="tx_gtncarpooling.backToList" /></f:link.action><br />
+  </div>
+
+</f:section>
+

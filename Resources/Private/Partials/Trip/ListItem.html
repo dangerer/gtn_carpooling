@@ -1,0 +1,53 @@
+
+<tr data-toggle="collapse" data-target="#detail-{trip.uid}">
+    <td>
+        {trip.tripDate -> f:format.date(format:'d.m.Y H:i')}
+    </td>
+    <td>
+        {trip.cityStart} <f:if condition="{trip.zipStart}">({trip.zipStart})</f:if>
+    </td>
+    <td>
+        {trip.cityDestination} <f:if condition="{trip.zipDestination}">({trip.zipDestination})</f:if>
+    </td>
+
+    <td>
+        <a data-toggle="collapse" data-target="#detail-{trip.uid}"><span class="glyphicons glyphicons-chevron-right"></span></a>
+        <f:comment>
+            <f:link.action pageUid="{settings.detailPid}" action="show" arguments="{trip : trip}">
+                <span class="glyphicons glyphicons-chevron-right"></span>&nbsp;<f:translate key="tx_gtncarpooling.tripDetail" />
+            </f:link.action>
+        </f:comment>
+    </td>
+</tr>
+
+<tr class="collapse" id="detail-{trip.uid}">
+    <td colspan="4">
+        <f:link.action pageUid="{settings.detailPid}" action="show" arguments="{trip : trip}" class="btn btn-default pull-right">
+            <span class="glyphicons glyphicons-message-plus"></span> <f:translate key="tx_gtncarpooling.sendMessage" />
+        </f:link.action>
+        <f:if condition="{trip.description}">{trip.description -> f:format.nl2br()} <br/></f:if>
+        <strong>{trip.firstName} {trip.lastName}</strong>
+        <f:if condition="{trip.phone}"><br/> {trip.phone}</f:if>
+    </td>
+</tr>
+
+
+<f:comment>
+<div class="row">
+    <div class="col-sm-3">
+        {trip.tripDate -> f:format.date(format:'d.m.Y H:i')}
+    </div>
+    <div class="col-sm-3">
+        {trip.cityStart}
+    </div>
+    <div class="col-sm-3">
+        {trip.cityDestination}
+    </div>
+
+    <div class="col-sm-3">
+        <f:link.action pageUid="{settings.detailPid}" action="show" arguments="{trip : trip}">
+            <span class="glyphicons glyphicons-chevron-right"></span>&nbsp;<f:translate key="tx_gtncarpooling.tripDetail" />
+        </f:link.action>
+    </div>
+</div>
+</f:comment>

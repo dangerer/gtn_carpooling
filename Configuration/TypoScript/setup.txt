@@ -1,0 +1,36 @@
+
+plugin.tx_gtncarpooling_trip {
+	view {
+		templateRootPaths.0 = {$plugin.tx_gtncarpooling_trip.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_gtncarpooling_trip.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_gtncarpooling_trip.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_gtncarpooling_trip.persistence.storagePid}
+	}
+	settings {
+		pathToControllerJavaScript = {$plugin.tx_gtncarpooling_trip.pathToControllerJavaScript}
+		pathToControllerCss = {$plugin.tx_gtncarpooling_trip.pathToControllerCss}
+		pathToMomentJavaScript = {$plugin.tx_gtncarpooling_trip.pathToMomentJavaScript}
+		pathToMomentLocaleJavaScript = {$plugin.tx_gtncarpooling_trip.pathToMomentLocaleJavaScript}
+		pathToDateTimePickerJavaScript = {$plugin.tx_gtncarpooling_trip.pathToDateTimePickerJavaScript}
+		pathToDateTimePickerCss = {$plugin.tx_gtncarpooling_trip.pathToDateTimePickerCss}
+		doNotLoadDateTimePickerJavascript = 0
+		requiredFields = firstName, lastName, email, tripDate, cityStart, cityDestination
+		contactFormRequiredFields = firstName, lastName, email, phone
+		dateFormat = d.m.Y H:i
+		# default values for new Trip form
+		defaultFormValues {
+			cityDestination = St. Wolfgang
+			zipDestination = 5360
+		}
+		# default values for NON form-fields
+		defaultValues {
+			#hidden = 1
+		}
+		adminEmail = noreply@bfi.at
+		adminName = bifeb
+		sendEmailActivation = 0
+	}
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+}

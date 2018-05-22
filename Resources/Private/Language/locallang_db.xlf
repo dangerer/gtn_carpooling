@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-02T10:16:02Z" product-name="gtn_carpooling">
+		<header/>
+		<body>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip">
+				<source>Trip</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.trip_date">
+				<source>Trip Date</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.city_start">
+				<source>City Start</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.zip_start">
+				<source>Zip Start</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.city_destination">
+				<source>City Destination</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.zip_destination">
+				<source>Zip Destination</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.publish_hash">
+				<source>Publish Hash</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.delete_hash">
+				<source>Delete Hash</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

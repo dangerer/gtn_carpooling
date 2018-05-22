@@ -1,0 +1,15 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<h1>Edit Trip</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" arguments="{object:Trip}" />
+
+<f:form action="update" name="trip" object="{trip}" class="form-horizontal" id="tripForm" section="tripForm" >
+    <f:render partial="Trip/FormFields" arguments="{trip:trip, requiredFields:requiredFields}" />
+	<f:form.submit value="Save" />
+</f:form>
+</f:section>
