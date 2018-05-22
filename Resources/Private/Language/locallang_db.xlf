@@ -39,6 +39,9 @@
 			<trans-unit id="tx_gtncarpooling_domain_model_trip.delete_hash">
 				<source>Delete Hash</source>
 			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.hasNeed">
+				<source>Needs</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

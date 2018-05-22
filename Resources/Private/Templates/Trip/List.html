@@ -17,7 +17,12 @@
 		<th>
 			<f:translate key="tx_gtncarpooling_domain_model_trip.city_destination" />
 		</th>
-		<th></th>
+		<th>
+			<f:translate key="tx_gtncarpooling_domain_model_trip.hasNeed" />
+		</th>
+		<th>
+			<f:translate key="tx_gtncarpooling_domain_model_trip.details" />
+		</th>
 	</tr>
 	<f:for each="{trips}" as="trip">
 		<f:render partial="Trip/ListItem" arguments="{trip:trip}" />
@@ -50,8 +55,8 @@
 		<div class="col-sm-3">
 			<strong><f:translate key="tx_gtncarpooling_domain_model_trip.city_destination" /></strong>
 		</div>
-
 		<div class="col-sm-3">
+			
 		</div>
 	</div>
 

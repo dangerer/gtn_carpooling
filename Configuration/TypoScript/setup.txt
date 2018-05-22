@@ -17,7 +17,7 @@ plugin.tx_gtncarpooling_trip {
 		pathToDateTimePickerCss = {$plugin.tx_gtncarpooling_trip.pathToDateTimePickerCss}
 		doNotLoadDateTimePickerJavascript = 0
 		requiredFields = firstName, lastName, email, tripDate, cityStart, cityDestination
-		contactFormRequiredFields = firstName, lastName, email, phone
+		contactFormRequiredFields = firstName, lastName, email
 		dateFormat = d.m.Y H:i
 		# default values for new Trip form
 		defaultFormValues {

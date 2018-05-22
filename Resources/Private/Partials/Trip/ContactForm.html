@@ -10,62 +10,67 @@
 <f:form action="sendMessage" name="passenger" object="{passenger}" id="passengerMessageForm" section="passengerMessageForm" class="form-horizontal">
     <f:render partial="FormErrors" arguments="{myValidationResults:myValidationResults.passenger}"/>
     <f:if condition="{successMessage}">
+	<f:then>
         <div class="alert alert-success">
             {successMessage}
         </div>
-    </f:if>
+	</f:then>
+    <f:else>
+	
+		<f:form.hidden name="trip" value="{trip}" />
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="row form-group">
+					<label for="passengerFirstName" class="col-sm-5 text-right">
+						<f:render partial="requiredMarker" arguments="{field:1}" /> <f:translate key="tx_gtncarpooling.passenger.firstName" /> 
+					</label>
+					<div class="col-sm-7">
+						<f:form.textfield id="passengerFirstName" property="firstName" class="form-control {f:if(condition:'{myValidationResults.passenger.firstName}', then:'f3-form-error')}" value="{passenger.firstName}"/>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label for="passengerLastName" class="col-sm-5 text-right">
+						<f:render partial="requiredMarker" arguments="{field:1}" /> <f:translate key="tx_gtncarpooling.passenger.lastName" />
 
-    <f:form.hidden name="trip" value="{trip}" />
-    <div class="row">
-        <div class="col-sm-5">
-            <div class="row form-group">
-                <label for="passengerFirstName" class="col-sm-5 text-right">
-                    <f:translate key="tx_gtncarpooling.passenger.firstName" /><f:render partial="requiredMarker" arguments="{field:1}" />
-                </label>
-                <div class="col-sm-7">
-                    <f:form.textfield id="passengerFirstName" property="firstName" class="form-control {f:if(condition:'{myValidationResults.passenger.firstName}', then:'f3-form-error')}" value="{passenger.firstName}"/>
-                </div>
-            </div>
-            <div class="row form-group">
-                <label for="passengerLastName" class="col-sm-5 text-right">
-                    <f:translate key="tx_gtncarpooling.passenger.lastName" /><f:render partial="requiredMarker" arguments="{field:1}" />
-                </label>
-                <div class="col-sm-7">
-                    <f:form.textfield id="passengerLastName" property="lastName" class="form-control {f:if(condition:'{myValidationResults.passenger.lastName}', then:'f3-form-error')}" value="{passenger.lastName}"/>
-                </div>
-            </div>
-            <div class="row form-group">
-                <label for="passengerEmail" class="col-sm-5 text-right">
-                    <f:translate key="tx_gtncarpooling.passenger.email" /><f:render partial="requiredMarker" arguments="{field:1}" />
-                </label>
-                <div class="col-sm-7">
-                    <f:form.textfield id="passengerEmail" property="email" class="form-control {f:if(condition:'{myValidationResults.passenger.email}', then:'f3-form-error')}" value="{passenger.email}"/>
-                </div>
-            </div>
-            <div class="row form-group">
-                <label for="passengerPhone" class="col-sm-5 text-right">
-                    <f:translate key="tx_gtncarpooling.passenger.phone" /><f:render partial="requiredMarker" arguments="{field:1}" />
-                </label>
-                <div class="col-sm-7">
-                    <f:form.textfield id="passengerPhone" property="phone" class="form-control {f:if(condition:'{myValidationResults.passenger.phone}', then:'f3-form-error')}" value="{passenger.phone}"/>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sm-offset-5 col-sm-7">
-                    <f:form.submit value="<f:translate key='tx_gtncarpooling.sendMessage' />" class="btn btn-default" />
-                </div>
-            </div>
+					</label>
+					<div class="col-sm-7">
+						<f:form.textfield id="passengerLastName" property="lastName" class="form-control {f:if(condition:'{myValidationResults.passenger.lastName}', then:'f3-form-error')}" value="{passenger.lastName}"/>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label for="passengerEmail" class="col-sm-5 text-right">
+						<f:render partial="requiredMarker" arguments="{field:1}"/> <f:translate key="tx_gtncarpooling.passenger.email" />
+					</label>
+					<div class="col-sm-7">
+						<f:form.textfield id="passengerEmail" property="email" class="form-control {f:if(condition:'{myValidationResults.passenger.email}', then:'f3-form-error')}" value="{passenger.email}"/>
+					</div>
+				</div>
+				<div class="row form-group">
+					<label for="passengerPhone" class="col-sm-5 text-right">
+						<f:render partial="requiredMarker" arguments="{field:0}" /> <f:translate key="tx_gtncarpooling.passenger.phone" />
+					</label>
+					<div class="col-sm-7">
+						<f:form.textfield id="passengerPhone" property="phone" class="form-control {f:if(condition:'{myValidationResults.passenger.phone}', then:'f3-form-error')}" value="{passenger.phone}"/>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-sm-offset-5 col-sm-7">
+						<f:form.submit value="<f:translate key='tx_gtncarpooling.sendMessage' />" class="btn btn-default" />
+					</div>
+				</div>
 
-        </div>
-        <div class="col-sm-6" style="height: auto;">
-            <f:form.textarea id="passengerMessage" property="message" class="form-control {f:if(condition:'{myValidationResults.passenger.message}', then:'f3-form-error')}" value="{passenger.message}" rows="5" placeholder="<f:translate key='tx_gtncarpooling.passenger.message' />"/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-offset-2 col-sm-2">
+			</div>
+			<div class="col-sm-6" style="height: auto;">
+				<f:form.textarea id="passengerMessage" property="message" class="form-control {f:if(condition:'{myValidationResults.passenger.message}', then:'f3-form-error')}" value="{passenger.message}" rows="5" placeholder="<f:translate key='tx_gtncarpooling.passenger.message' />"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-2 col-sm-2">
 
-        </div>
-    </div>
+			</div>
+		</div>
+	</f:else>
+	</f:if>
 
 </f:form>
 

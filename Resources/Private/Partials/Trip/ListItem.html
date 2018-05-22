@@ -1,4 +1,4 @@
-
+	
 <tr data-toggle="collapse" data-target="#detail-{trip.uid}">
     <td>
         {trip.tripDate -> f:format.date(format:'d.m.Y H:i')}
@@ -9,7 +9,15 @@
     <td>
         {trip.cityDestination} <f:if condition="{trip.zipDestination}">({trip.zipDestination})</f:if>
     </td>
-
+	<td>
+		<f:if condition="{trip.hasNeed}">
+			<f:then> <input type="checkbox" value="{trip.hasNeed}" checked disabled/>
+			</f:then>
+			<f:else>
+				<input type="checkbox" value="{trip.hasNeed}" disabled/>
+			</f:else>
+		</f:if>
+	</td>
     <td>
         <a data-toggle="collapse" data-target="#detail-{trip.uid}"><span class="glyphicons glyphicons-chevron-right"></span></a>
         <f:comment>

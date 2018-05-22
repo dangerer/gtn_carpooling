@@ -123,6 +123,12 @@ class Trip extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $hidden = 0;
 
+	 /**
+     * hasNeed
+     *
+     * @var boolean
+     */
+	protected $hasNeed = false;
     /**
      * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
      * @inject
@@ -134,6 +140,28 @@ class Trip extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->cityDestination = '123456';
     }*/
 
+	
+	 /**
+     * Returns the has needed property
+     * 
+     * @return boolean $hasNeed
+     */
+	public function getHasNeed()
+	{
+		return $this->hasNeed;
+	}
+	
+	/**
+     * Sets hasNeed
+     * 
+     * @param boolean $hasNeed
+     * @return void
+     */
+	public function setHasNeed($hasNeed)
+	{
+		$this->hasNeed = $hasNeed;
+	}
+	
     /**
      * Returns the firstName
      * 

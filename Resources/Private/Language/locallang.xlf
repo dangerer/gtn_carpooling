@@ -45,6 +45,12 @@
 			<trans-unit id="tx_gtncarpooling_domain_model_trip.person">
 				<source>Person</source>
 			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.details">
+				<source>Details</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.hasNeed">
+				<source>Needs</source>
+			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.is_required">
 				<source>* is required field</source>
 			</trans-unit>

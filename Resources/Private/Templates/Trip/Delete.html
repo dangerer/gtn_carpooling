@@ -10,7 +10,7 @@
           </f:then>
           <f:else>
               <f:translate key="tx_gtncarpooling.confirmDeleteMessage" /><br />
-              <f:link.page addQueryString="true" argumentsToBeExcludedFromQueryString="{id:1}"  additionalParams="{confirmDelete:'1'}" class="btn btn-default" ><f:translate key="tx_gtncarpooling.delete" /></f:link.page>
+              <f:link.page addQueryString="true" argumentsToBeExcludedFromQueryString="{id:1}"  additionalParams="{confirmDelete:'1'}" id="btn_delete_trip_id" class="btn btn-info btn-lg" > <span class="glyphicons glyphicons-remove"></span> <f:translate key="tx_gtncarpooling.delete" /></f:link.page>
               <f:render partial="Trip/Properties" arguments="{trip:trip}" />
           </f:else>
     </f:if>
