@@ -126,9 +126,10 @@ class Trip extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	 /**
      * hasNeed
      *
-     * @var boolean
+     * @var integer
      */
-	protected $hasNeed = false;
+	protected $hasNeed = 0;
+
     /**
      * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
      * @inject
@@ -144,7 +145,7 @@ class Trip extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	 /**
      * Returns the has needed property
      * 
-     * @return boolean $hasNeed
+     * @return integer $hasNeed
      */
 	public function getHasNeed()
 	{
@@ -154,7 +155,7 @@ class Trip extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	/**
      * Sets hasNeed
      * 
-     * @param boolean $hasNeed
+     * @param integer $hasNeed
      * @return void
      */
 	public function setHasNeed($hasNeed)

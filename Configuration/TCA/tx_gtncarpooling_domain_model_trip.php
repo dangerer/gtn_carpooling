@@ -218,6 +218,13 @@ return array(
 				'eval' => 'trim',
 			),
 		),
+        'has_need' => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:gtn_cachedevents/Resources/Private/Language/locallang_db.xlf:tx_gtncachedevents_domain_model_event.hasNeed',
+            'config' => array(
+                'type' => 'check',
+            ),
+        ),
 
 		
 	),

@@ -19,7 +19,7 @@ CREATE TABLE tx_gtncarpooling_domain_model_trip (
 	zip_destination int(11) DEFAULT '0' NOT NULL,
 	publish_hash varchar(255) DEFAULT '' NOT NULL,
 	delete_hash varchar(255) DEFAULT '' NOT NULL,
-	hasNeed boolean DEFAULT FALSE NOT NULL,
+	has_need tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	description TEXT,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

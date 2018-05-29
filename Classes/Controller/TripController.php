@@ -149,6 +149,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 $newTrip->{'set'.ucfirst($paramName)}($value);
             }
         }
+//        DebuggerUtility::var_dump($newTrip);exit;
         $this->tripRepository->add($newTrip);
         $this->persistenceManager->persistAll();
         $this->sendEmailAfterTripCreated($newTrip, $this->settings['sendActivationEmail']);
