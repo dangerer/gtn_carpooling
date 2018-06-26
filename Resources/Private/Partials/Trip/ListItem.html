@@ -1,4 +1,4 @@
-	
+
 <tr data-toggle="collapse" data-target="#detail-{trip.uid}">
     <td>
         {trip.tripDate -> f:format.date(format:'d.m.Y H:i')}
@@ -11,10 +11,11 @@
     </td>
 	<td>
 		<f:if condition="{trip.hasNeed}">
-			<f:then> <input type="checkbox" value="{trip.hasNeed}" checked disabled/>
+			<f:then>
+				Suche Mitfahrgelegenheit
 			</f:then>
 			<f:else>
-				<input type="checkbox" value="{trip.hasNeed}" disabled/>
+				Fahrt
 			</f:else>
 		</f:if>
 	</td>
@@ -31,7 +32,7 @@
 <tr class="collapse" id="detail-{trip.uid}">
     <td colspan="4">
         <f:link.action pageUid="{settings.detailPid}" action="show" arguments="{trip : trip}" class="btn btn-default pull-right">
-            <span class="glyphicons glyphicons-message-plus"></span> <f:translate key="tx_gtncarpooling.sendMessage" />
+            <span class="glyphicons glyphicons-message-plus"></span> <f:translate key="tx_gtncarpooling.contactAuthor" />
         </f:link.action>
         <f:if condition="{trip.description}">{trip.description -> f:format.nl2br()} <br/></f:if>
         <strong>{trip.firstName} {trip.lastName}</strong>

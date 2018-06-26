@@ -30,6 +30,9 @@
 			<trans-unit id="zip_destination.description">
 				<source>zipDestination</source>
 			</trans-unit>
+			<trans-unit id="has_need.description">
+				<source>hasNeed</source>
+			</trans-unit>
 			<trans-unit id="publish_hash.description">
 				<source>publishHash</source>
 			</trans-unit>

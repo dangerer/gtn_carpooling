@@ -26,6 +26,10 @@
 										<numIndex index="0">Carpooling trip detail</numIndex>
 										<numIndex index="1">Trip->show;Trip->sendMessage</numIndex>
 									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">Carpooling trip search</numIndex>
+										<numIndex index="1">Trip->search;Trip->create;Trip->edit;Trip->update;Trip->publish;Trip->unpublish;Trip->delete;Trip->confirm</numIndex>
+									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
@@ -63,6 +67,36 @@
 				</el>
 			</ROOT>
 		</tripeditform>
+		<rideSearchForm>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Additional configuration</sheetTitle>
+					<displayCond><![CDATA[FIELD:sDEF.switchableControllerActions:=:Trip->search;Trip->create;Trip->edit;Trip->update;Trip->publish;Trip->unpublish;Trip->delete;Trip->confirm]]></displayCond>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.listPid>
+						<TCEforms>
+							<label>List page</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.listPid>
+				</el>
+			</ROOT>
+		</rideSearchForm>
 		<triplist>
 			<ROOT>
 				<TCEforms>

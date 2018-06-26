@@ -37,7 +37,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * tripRepository
-     * 
+     *
      * @var \GTN\GtnCarpooling\Domain\Repository\TripRepository
      * @inject
      */
@@ -74,7 +74,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                         \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, $dateFormat);
             }
         }
-        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+         $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
         //$pageRenderer =\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
         $pageRenderer->loadJquery();
         if (!$this->settings['doNotLoadDateTimePickerJavascript']) {
@@ -89,7 +89,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action list
-     * 
+     *
      * @return void
      */
     public function listAction()
@@ -97,10 +97,10 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $trips = $this->tripRepository->findFuture();
         $this->view->assign('trips', $trips);
     }
-    
+
     /**
      * action show
-     * 
+     *
      * @param \GTN\GtnCarpooling\Domain\Model\Trip $trip
      * @return void
      */
@@ -108,7 +108,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('trip', $trip);
     }
-    
+
     /**
      * action new
      *
@@ -129,14 +129,26 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('newTrip', $newTrip);*/
         $this->assignToView($this->view);
     }
-    
+
     /**
-     * action create
-     * 
+     * action search
+     *
      * @param \GTN\GtnCarpooling\Domain\Model\Trip $newTrip
      * @return void
      */
-    public function createAction(\GTN\GtnCarpooling\Domain\Model\Trip $newTrip)
+    public function searchAction($newTrip = NULL)
+    {
+        $this->assignToView($this->view);
+    }
+
+    /**
+     * action create
+     *
+     * @param \GTN\GtnCarpooling\Domain\Model\Trip $newTrip
+     * @param int $hasNeed
+     * @return void
+     */
+    public function createAction(\GTN\GtnCarpooling\Domain\Model\Trip $newTrip, $hasNeed)
     {
 //        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
         $deleteHash = md5(GeneralUtility::generateRandomBytes(64));
@@ -149,6 +161,11 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 $newTrip->{'set'.ucfirst($paramName)}($value);
             }
         }
+
+        //set hasNeed to 1 if createAction is called from Search.html form, 0 if called from New.html form (1 = looking for ride, 0 = created a trip)
+        $newTrip->setHasNeed($hasNeed);
+
+
 //        DebuggerUtility::var_dump($newTrip);exit;
         $this->tripRepository->add($newTrip);
         $this->persistenceManager->persistAll();
@@ -159,6 +176,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 //        $this->redirect('list');
     }
 
+
     /**
      * @param int $tripUid
      */
@@ -168,10 +186,10 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('sendEmailActivation', $this->settings['sendEmailActivation']);
         $this->view->assign('listPid', $this->settings['listPid']);
     }
-    
+
     /**
      * action edit
-     * 
+     *
      * @param \GTN\GtnCarpooling\Domain\Model\Trip $trip
      * @ignorevalidation $trip
      * @return void
@@ -180,10 +198,10 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('trip', $trip);
     }
-    
+
     /**
      * action update
-     * 
+     *
      * @param \GTN\GtnCarpooling\Domain\Model\Trip $trip
      * @return void
      */
@@ -193,10 +211,10 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->tripRepository->update($trip);
         $this->redirect('list');
     }
-    
+
     /**
      * action delete
-     * 
+     *
      * @return void
      */
     public function deleteAction()
@@ -216,7 +234,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $this->tripRepository->remove($trip);
 //        $this->redirect('list');
     }
-    
+
     /**
      * action publish
      *
@@ -236,15 +254,15 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         }
         $this->view->assign('trip', $trip);
     }
-    
+
     /**
      * action unpublish
-     * 
+     *
      * @return void
      */
     public function unpublishAction()
     {
-        
+
     }
 
     /**

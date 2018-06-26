@@ -7,12 +7,12 @@ if (!defined('TYPO3_MODE')) {
 	'GTN.' . $_EXTKEY,
 	'Trip',
 	array(
-		'Trip' => 'list, show, new, create, edit, update, delete, publish, unpublish, confirm, sendMessage',
-		
+		'Trip' => 'list, show, new, create, edit, update, delete, publish, unpublish, confirm, sendMessage, search',
+
 	),
 	// non-cacheable actions
 	array(
-		'Trip' => 'show, list, new, edit, update, create, publish, unpublish, delete, sendMessage, confirm',
-		
+		'Trip' => 'show, list, new, edit, update, create, publish, unpublish, delete, sendMessage, confirm, search',
+
 	)
 );
