@@ -9,7 +9,7 @@
 
 <f:render partial="FormErrors" arguments="{object:newTrip}" />
 
-<f:form action="create" name="newTrip" object="{newTrip}" arguments="{hasNeed:0}" class="form-horizontal" id="tripForm" section="newTripHeader">
+<f:form action="create" name="newTrip" object="{newTrip}" class="form-horizontal" id="tripForm" section="newTripHeader">
     <f:render partial="Trip/FormFields" arguments="{trip:newTrip, requiredFields:requiredFields}" />
     <div class="row">
         <div class="form-group">

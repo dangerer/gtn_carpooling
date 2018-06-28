@@ -61,7 +61,7 @@
 				<source>Details</source>
 				<target>Details</target>
 			</trans-unit>
-			<trans-unit id="tx_gtncarpooling_domain_model_trip.has_need">
+			<trans-unit id="tx_gtncarpooling_domain_model_trip.hasNeed">
 				<source>Needs</source>
 				<target>Nachfrage</target>
 			</trans-unit>
@@ -72,10 +72,6 @@
 			<trans-unit id="tx_gtncarpooling.create_trip">
 				<source>Create a trip</source>
 				<target>Fahrt erstellen</target>
-			</trans-unit>
-			<trans-unit id="tx_gtncarpooling.search_trip">
-				<source>Search for a ride</source>
-				<target>Suchanfrage erstellen</target>
 			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.errorMessages.firstName">
 				<source>Please input a first name</source>
@@ -160,10 +156,6 @@
 				<source>Send message</source>
 				<target>Nachricht abschicken.</target>
 			</trans-unit>
-			<trans-unit id="tx_gtncarpooling.contactAuthor">
-				<source>Contact author</source>
-				<target>Nachricht an Anbieter</target>
-			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.email.subjectAfterTripCreated">
 				<source>New bifeb trip created</source>
 				<target>bifeb Mitfahrbörse Fahrt erstellt</target>
@@ -238,10 +230,6 @@
 			<trans-unit id="tx_gtncarpooling.new_trip_formtitle">
 				<source>New trip</source>
 				<target>neue Fahrt eintragen</target>
-			</trans-unit>
-			<trans-unit id="tx_gtncarpooling.search_trip_formtitle">
-			<source>Search for a ride</source>
-			<target>Suche nach Mitfahrgelegenheit</target>
 			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.trip_list_title">
 				<source>Trips list</source>
