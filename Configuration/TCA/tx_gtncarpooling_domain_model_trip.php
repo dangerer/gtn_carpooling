@@ -32,7 +32,7 @@ return array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -218,14 +218,17 @@ return array(
 				'eval' => 'trim',
 			),
 		),
-        'has_need' => array(
-            'exclude' => 1,
-            'label' => 'LLL:EXT:gtn_cachedevents/Resources/Private/Language/locallang_db.xlf:tx_gtncachedevents_domain_model_event.hasNeed',
-            'config' => array(
-                'type' => 'check',
-            ),
-        ),
+    'has_need' => array(
+    	'exclude' => 1,
+      'label' => 'LLL:EXT:gtn_cachedevents/Resources/Private/Language/locallang_db.xlf:tx_gtncarpooling_domain_model_trip.has_need',
+      'config' => array(
+          'type' => 'check',
+					'items' => array(
+						array('Suche Mitfahrgelegenheit'),
+					),
+      )
+    ),
 
-		
+
 	),
 );
