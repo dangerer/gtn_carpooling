@@ -124,6 +124,10 @@
 				<source>New trip</source>
 				<target>neue Fahrt</target>
 			</trans-unit>
+			<trans-unit id="tx_gtncarpooling.createNewTrip">
+				<source>Create new trip</source>
+				<target>Neue Fahrt erstellen</target>
+			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.trip_detail_label">
 				<source>trip detail</source>
 				<target>Details zur Fahrt</target>
@@ -242,6 +246,10 @@
 			<trans-unit id="tx_gtncarpooling.search_trip_formtitle">
 			<source>Search for a ride</source>
 			<target>Suche nach Mitfahrgelegenheit</target>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling.createNewSearch">
+			<source>Search for a ride</source>
+			<target>Neue Mitfahrgelegenheit suchen</target>
 			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.trip_list_title">
 				<source>Trips list</source>

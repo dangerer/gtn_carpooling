@@ -186,6 +186,12 @@
 			<trans-unit id="tx_gtncarpooling.search_trip_formtitle">
 			<source>Search for a ride</source>
 			</trans-unit>
+			<trans-unit id="tx_gtncarpooling.createNewSearch">
+			<source>Search for a ride</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling.createNewTrip">
+				<source>Create new trip</source>
+			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.trip_list_title">
 				<source>Trips list</source>
 			</trans-unit>
