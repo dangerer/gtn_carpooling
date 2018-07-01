@@ -5,9 +5,11 @@
 
 <f:comment><f:flashMessages /></f:comment>
 
-<f:link.action pageUid="{settings.createTripPid}" action="search">
-  <button class="btn-lg btn-primary create-button-margin"><= Zurück</button>
-</f:link.action>
+<f:if condition="{settings.listPid}">
+  <f:link.action pageUid="{settings.listPid}">
+    <button class="btn btn-primary create-button-margin"><= Zurück</button>
+  </f:link.action>
+</f:if>
 
 <h1 id="newSearchHeader"><f:translate key='tx_gtncarpooling.search_trip_formtitle' /></h1>
 

@@ -6,12 +6,14 @@
 <f:section name="main">
 
 <f:comment><f:flashMessages /></f:comment>
-<a data-toggle="collapse" data-target="#newTripSection"><button class="btn-lg btn-primary create-button-margin">Neue Fahrt erstellen</button></a>
-<f:link.action pageUid="{settings.searchPid}" action="search">
-  <button class="btn-lg btn-primary create-button-margin">Mitfahrgelegenheit suchen</button>
-</f:link.action>
 
-<div id="newTripSection" class="collapse">
+<f:if condition="{settings.listPid}">
+  <f:link.action pageUid="{settings.listPid}">
+    <button class="btn btn-primary create-button-margin"><= Zurück</button>
+  </f:link.action>
+</f:if>
+
+<div id="newTripSection" class="collapse in">
 
   <h1 id="newTripHeader"><f:translate key='tx_gtncarpooling.new_trip_formtitle' /></h1>
   <f:render partial="FormErrors" arguments="{object:newTrip}" />

@@ -39,6 +39,17 @@
 				</div>
 	</f:comment>
 
+<f:if condition="{settings.createTripPid} && {settings.searchPid}">
+	<f:link.action pageUid="{settings.createTripPid}" action="new">
+	  <button class="btn btn-primary create-button-margin">Neue Fahrt erstellen</button>
+	</f:link.action>
+
+	<f:link.action pageUid="{settings.searchPid}" action="search">
+	  <button class="btn btn-primary create-button-margin">Mitfahrgelegenheit suchen</button>
+	</f:link.action>
+</f:if>
+
+
 </f:section>
 
 
