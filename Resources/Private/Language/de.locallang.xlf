@@ -172,9 +172,17 @@
 				<source>New bifeb trip created</source>
 				<target>bifeb Mitfahrbörse Fahrt erstellt</target>
 			</trans-unit>
+			<trans-unit id="tx_gtncarpooling.email.subjectAfterSearchCreated">
+				<source>New bifeb search created</source>
+				<target>bifeb Mitfahrbörse Suchanfrage erstellt</target>
+			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.email.subjectAfterTripCreatedWithEmailActivation">
 				<source>New bifeb trip created</source>
 				<target>bifeb Mitfahrbörse Fahrt aktivieren</target>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling.email.subjectAfterSearchCreatedWithEmailActivation">
+				<source>New bifeb search created</source>
+				<target>bifeb Mitfahrbörse Suchanfrage aktivieren</target>
 			</trans-unit>
 			<trans-unit id="tx_gtncarpooling.publishMessage">
 				<source>Your trip is published</source>

@@ -44,7 +44,7 @@
 	  <button class="btn btn-primary create-button-margin">Neue Fahrt erstellen</button>
 	</f:link.action>
 
-	<f:link.action pageUid="{settings.searchPid}" action="search">
+	<f:link.action pageUid="{settings.searchPid} && {settings.createTripPid}" action="search">
 	  <button class="btn btn-primary create-button-margin">Mitfahrgelegenheit suchen</button>
 	</f:link.action>
 </f:if>

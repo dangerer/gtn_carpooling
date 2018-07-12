@@ -132,6 +132,14 @@
 			<trans-unit id="tx_gtncarpooling.email.subjectAfterTripCreatedWithEmailActivation">
 				<source>New bifeb trip created</source>
 			</trans-unit>
+			
+			<trans-unit id="tx_gtncarpooling.email.subjectAfterSearchCreated">
+				<source>New bifeb search created</source>
+			</trans-unit>
+			<trans-unit id="tx_gtncarpooling.email.subjectAfterSearchCreatedWithEmailActivation">
+				<source>New bifeb search created</source>
+			</trans-unit>
+			
 			<trans-unit id="tx_gtncarpooling.publishMessage">
 				<source>Your trip is published</source>
 			</trans-unit>

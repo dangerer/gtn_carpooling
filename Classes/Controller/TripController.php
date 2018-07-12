@@ -162,7 +162,7 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             }
         }
 
-        //set hasNeed to 1 if createAction is called from Search.html form, 0 if called from New.html form (1 = looking for ride, 0 = created a trip)
+        //if createAction is called from Search.html form, then 1 is passed by param $hasNeed, otherwise 0 is passed if called from New.html form (1 = looking for ride, 0 = created a trip)
         $newTrip->setHasNeed($hasNeed);
 
 
@@ -292,13 +292,17 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             'sendEmailActivation' => $sendEmailActivation
         );
 
-        $mailService->sendTemplateEmail(
-            array($trip->getEmail() => $trip->getFirstName().' '.$trip->getLastName()),
-            array($this->settings['adminEmail'] => $this->settings['adminName']),
-            \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gtncarpooling.email.subjectAfterTripCreated', 'gtn_carpooling'),
-            'TripCreatedNotification',
-            $variables
-        );
+		$mailTemplate = $trip->getHasNeed() == 0 ? 'TripCreatedNotification' : 'SearchCreatedNotification';
+
+		
+		$mailService->sendTemplateEmail(
+				array($trip->getEmail() => $trip->getFirstName().' '.$trip->getLastName()),
+				array($this->settings['adminEmail'] => $this->settings['adminName']),
+				\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gtncarpooling.email.subjectAfterTripCreated', 'gtn_carpooling'),
+				$mailTemplate,
+				$variables
+		);
+		
     }
 
     /**
@@ -366,14 +370,16 @@ class TripController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             'trip' => $trip,
             'contactForm' => $passenger
         );
-
-        $mailService->sendTemplateEmail(
-            array($trip->getEmail() => $trip->getFirstName().' '.$trip->getLastName()),
-            array($passenger['email'] => $passenger['firstName'].' '.$passenger['lastName']),
-            \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gtncarpooling.email.subjectTripContactForm', 'gtn_carpooling'),
-            'TripContactFormNotification',
-            $variables
-        );
-    }
+		
+		$mailTemplate = $trip->getHasNeed() == 0 ? 'TripContactFormNotification' : 'SearchContactFormNotification';
+		
+		$mailService->sendTemplateEmail(
+				array($trip->getEmail() => $trip->getFirstName().' '.$trip->getLastName()),
+				array($passenger['email'] => $passenger['firstName'].' '.$passenger['lastName']),
+				\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gtncarpooling.email.subjectTripContactForm', 'gtn_carpooling'),
+				$mailTemplate,
+				$variables
+			);
+    } 
 
 }
